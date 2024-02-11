@@ -53,7 +53,7 @@ periodDownArrow.addEventListener("click", () => {
 hourPlus.addEventListener("click", () => {
   hourValue = hourValue + 1;
   if (hourValue > 12) {
-    hourValue = 1;
+    hourValue = 0;
     alarmHourTxt.value = hourValue;
     update();
   } else {
