@@ -207,7 +207,7 @@ body {
     width: 200px;
   }
   #mainDiv #clockBody .time .timeTxt {
-    padding: 0px 2px;
+    padding: 5px 5px;
     font-size: 25px;
   }
 }
