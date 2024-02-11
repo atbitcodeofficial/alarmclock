@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Alarm Clock</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="helpingDiv1">
+      <div id="clockBody">
+        <div id="timeDiv" class="time">
+          <h1>
+            <span id="hour" class="timeTxt"></span>:<span id="minute" class="timeTxt"></span>:<span id="second"
+              class="timeTxt"></span>
+          </h1>
+        </div>
+        <div id="periodDiv" class="time">
+          <h1><span id="period" class="timeTxt"></span></h1>
+        </div>
+      </div>
+    </div>
+    <div id="extraBtnDiv">
+      <button type="button" id="resetBtn" class="hide">Reset</button>
+      <button type="button" id="stopBtn" class="hide">Stop</button>
+    </div>
+    <div id="alarmDiv">
+      <form action="">
+        <div id="timePickupDiv">
+          <div class="inputDiv">
+            <h1 class="arrow" id="hourPlus">+</h1>
+            <input type="text" name="hour" id="alarmHour" class="input" maxlength="2" value="0" readonly />
+            <h1 class="arrow" id="hourMinus">-</h1>
+          </div>
+          <div class="inputDiv">
+            <h1 class="arrow" id="minutePlus">+</h1>
+            <input type="text" name="minute" id="alarmMinute" class="input" maxlength="2" value="0" readonly />
+            <h1 class="arrow" id="minuteMinus">-</h1>
+          </div>
+          <div class="inputDiv">
+            <h1 class="arrow" id="secondPlus">+</h1>
+            <input type="text" name="second" id="alarmSecond" class="input" maxlength="2" value="0" readonly />
+            <h1 class="arrow" id="secondMinus">-</h1>
+          </div>
+          <div class="inputDiv">
+            <h1 class="arrow" id="upArrow">
+              <div id="periodUpArrow">></span>
+            </h1>
+            <input type="text" name="hour" id="alarmPeriod" class="input" maxlength="3" value="AM" readonly />
+            <h1 class="arrow" id="downArrow">
+              <div id="periodDownArrow">></span>
+            </h1>
+          </div>
+        </div>
+        <div id="setAlarmDiv">
+          <button type="button" id="alarmSetBtn">Set Alarm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
