@@ -224,4 +224,13 @@ body {
     width: 350px;
     height: 200px;
   }
+  #mainDiv #extraBtnDiv button {
+    width: 25%;
+    padding: 3px 10px;
+  }
+  #mainDiv #extraBtnDiv {
+    left: 0px;
+    gap: 5px;
+    bottom: 120%;
+  }
 }
