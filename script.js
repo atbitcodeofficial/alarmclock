@@ -20,6 +20,8 @@ let arrowBtn = document.querySelectorAll(".arrow");
 let inputs = document.querySelectorAll(".input");
 let resetBtn = document.getElementById("resetBtn");
 let stopBtn = document.getElementById("stopBtn");
+let mainBody = document.getElementById("mainDiv");
+let txt = document.querySelectorAll(".txt");
 function update() {
   document.querySelectorAll(".input").forEach((box) => {
     if (box.value.toString().length === 1) {
@@ -159,6 +161,9 @@ function setAlarm() {
     inputs.forEach((input) => {
       input.classList.add("disabled");
     });
+    txt.forEach((txt) => {
+      txt.classList.add("txtDisabled");
+    });
     alarmSetBtn.classList.add("disabled");
     resetBtn.classList.remove("hide");
     setInterval(() => {
@@ -197,10 +202,14 @@ function setAlarm() {
       ) {
         resolve();
       }
+      resetBtn.addEventListener("click", () => {
+        reject();
+      });
     }, 500);
   });
   prom.then(() => {
     alarmSound.play();
+    let alarmSoundDuration = alarmSound.duration;
     arrowBtn.forEach((btn) => {
       btn.classList.remove("disabled");
     });
@@ -208,12 +217,21 @@ function setAlarm() {
     inputs.forEach((input) => {
       input.classList.remove("disabled");
     });
+    txt.forEach((txt) => {
+      txt.classList.remove("txtDisabled");
+    });
     resetBtn.classList.add("hide");
     stopBtn.classList.remove("hide");
+    setTimeout(() => {
+      stopBtn.classList.add("hide");
+      mainBody.classList.remove("vibrate");
+    }, alarmSoundDuration * 1000);
+    mainBody.classList.add("vibrate");
   });
   stopBtn.addEventListener("click", () => {
     alarmSound.pause();
     stopBtn.classList.add("hide");
+    mainBody.classList.remove("vibrate");
   });
   resetBtn.addEventListener("click", () => {
     arrowBtn.forEach((btn) => {
@@ -223,11 +241,16 @@ function setAlarm() {
     inputs.forEach((input) => {
       input.classList.remove("disabled");
     });
+    txt.forEach((txt) => {
+      txt.classList.remove("txtDisabled");
+    });
     resetBtn.classList.add("hide");
-    document.getElementById("alarmHour").value = "00";
-    document.getElementById("alarmMinute").value = "00";
-    document.getElementById("alarmSecond").value = "00";
-    document.getElementById("alarmPeriod").value = "00";
+    document.getElementById("alarmHour").value =
+      document.getElementById("alarmHour").value;
+    document.getElementById("alarmMinute").value =
+      document.getElementById("alarmMinute").value;
+    document.getElementById("alarmSecond").value =
+      document.getElementById("alarmSecond").value;
   });
 }
 
