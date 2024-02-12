@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
+  user-select: none;
 }
 
 body {
@@ -89,6 +90,12 @@ body {
   font-size: 60px;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+#mainDiv #alarmDiv form #timePickupDiv .inputDiv h5 {
+  text-align: center;
 }
 
 #mainDiv #alarmDiv form #timePickupDiv .inputDiv h1 {
@@ -146,6 +153,11 @@ body {
 .disabled {
   pointer-events: none;
   background-color: #b4b4b442 !important;
+  color: #b4b4b4 !important;
+}
+
+.txtDisabled {
+  color: #b4b4b4 !important;
 }
 
 #mainDiv #extraBtnDiv {
@@ -186,6 +198,35 @@ body {
   -o-transform: translateY(35px);
   opacity: 0;
   pointer-events: none;
+}
+
+.vibrate {
+  animation: vibrate 0.1s linear infinite alternate;
+  -webkit-animation: vibrate 0.1s linear infinite alternate;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(1px);
+    -webkit-transform: translateX(1px);
+    -moz-transform: translateX(1px);
+    -ms-transform: translateX(1px);
+    -o-transform: translateX(1px);
+  }
+  50% {
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-1px);
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+  }
 }
 
 @media screen and (max-width: 560px) {
