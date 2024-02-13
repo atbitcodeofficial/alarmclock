@@ -8,11 +8,12 @@
 
 body {
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #mainDiv {
@@ -274,7 +275,7 @@ body {
 }
 
 #settingsPage #musicTonesDiv {
-  width: 200px;
+  width: 250px;
   min-height: 30px;
 }
 
