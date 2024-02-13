@@ -1,3 +1,5 @@
+console.log("hey welcome to my alarm clock app made with pure HTML,CSS & JS by sagar"); 
+
 let hourTxt = document.getElementById("hour");
 let minuteTxt = document.getElementById("minute");
 let secondTxt = document.getElementById("second");
