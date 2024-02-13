@@ -11,6 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 #mainDiv {
@@ -229,6 +231,129 @@ body {
   }
 }
 
+#mainDiv #settingsBtn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+#mainDiv #settingsBtn img {
+  width: 30px;
+}
+
+#settingsPage {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  background-color: #9ea0fde0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#settingsPage #cutBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#settingsPage #cutBtn img {
+  width: 30px;
+}
+
+#settingsPage #musicTonesDiv {
+  width: 200px;
+  min-height: 30px;
+}
+
+#settingsPage #musicTonesDiv .musicBar {
+  height: 30px;
+  width: 100%;
+  background-color: #6769ff94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+#settingsPage #musicTonesDiv .musicBar:hover {
+  color: #c9c9c9 !important;
+  background-color: #676affee;
+}
+
+#settingsPage #musicTonesDiv .musicBar .playPauseBtn {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#settingsPage #musicTonesDiv .musicBar .playPauseBtn .icon {
+  height: 100%;
+  width: 100%;
+}
+
+.play {
+  background: url(play_icon.svg);
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pause {
+  background: url(pause_icon.svg);
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#settingsPage #musicTonesDiv .musicBar .musicName {
+  height: 100%;
+  width: calc(100% - 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 8px;
+  color: white;
+}
+
+.selected {
+  background-color: #676affee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.movePage {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+}
+
 @media screen and (max-width: 560px) {
   #mainDiv {
     width: 450px;
@@ -257,6 +382,9 @@ body {
   #mainDiv {
     width: 400px;
     height: 200px;
+  }
+  #mainDiv #settingsBtn img {
+    width: 20px;
   }
 }
 
