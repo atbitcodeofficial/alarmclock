@@ -15,13 +15,28 @@ let secondMinus = document.getElementById("secondMinus");
 let periodUpArrow = document.getElementById("upArrow");
 let periodDownArrow = document.getElementById("downArrow");
 let alarmSetBtn = document.getElementById("alarmSetBtn");
-let alarmSound = new Audio("alarm.wav");
+let sound1 = new Audio("alarm1.wav");
+let sound2 = new Audio("alarm2.wav");
+let sound3 = new Audio("alarm3.wav");
+let sound4 = new Audio("alarm4.wav");
+let alarmSound = sound1;
+let music1 = document.querySelector(".music1");
+let music2 = document.querySelector(".music2");
+let music3 = document.querySelector(".music3");
+let music4 = document.querySelector(".music4");
+let music1Play = document.querySelector(".music1Play");
+let music2Play = document.querySelector(".music2Play");
+let music3Play = document.querySelector(".music3Play");
+let music4Play = document.querySelector(".music4Play");
 let arrowBtn = document.querySelectorAll(".arrow");
 let inputs = document.querySelectorAll(".input");
 let resetBtn = document.getElementById("resetBtn");
 let stopBtn = document.getElementById("stopBtn");
 let mainBody = document.getElementById("mainDiv");
 let txt = document.querySelectorAll(".txt");
+let settingsBtn = document.getElementById("settingsBtn");
+let cutBtn = document.getElementById("cutBtn");
+let settingsPage = document.getElementById("settingsPage");
 function update() {
   document.querySelectorAll(".input").forEach((box) => {
     if (box.value.toString().length === 1) {
@@ -256,4 +271,155 @@ function setAlarm() {
 
 alarmSetBtn.addEventListener("click", () => {
   setAlarm();
+});
+
+settingsBtn.addEventListener("click", () => {
+  settingsPage.classList.add("movePage");
+});
+
+cutBtn.addEventListener("click", () => {
+  settingsPage.classList.remove("movePage");
+});
+
+function changeMusic() {
+  if (music2.classList.contains("selected")) {
+    alarmSound = sound2;
+  } else if (music3.classList.contains("selected")) {
+    alarmSound = sound3;
+  } else if (music4.classList.contains("selected")) {
+    alarmSound = sound4;
+  } else {
+    alarmSound = sound1;
+  }
+}
+
+music1.addEventListener("click", () => {
+  music1.classList.add("selected");
+  music2.classList.remove("selected");
+  music3.classList.remove("selected");
+  music4.classList.remove("selected");
+  changeMusic();
+});
+
+music2.addEventListener("click", () => {
+  music2.classList.add("selected");
+  music1.classList.remove("selected");
+  music3.classList.remove("selected");
+  music4.classList.remove("selected");
+  changeMusic();
+});
+
+music3.addEventListener("click", () => {
+  music3.classList.add("selected");
+  music2.classList.remove("selected");
+  music1.classList.remove("selected");
+  music4.classList.remove("selected");
+  changeMusic();
+});
+
+music4.addEventListener("click", () => {
+  music4.classList.add("selected");
+  music2.classList.remove("selected");
+  music3.classList.remove("selected");
+  music1.classList.remove("selected");
+  changeMusic();
+});
+
+let music1PlayCondition = true;
+let music2PlayCondition = true;
+let music3PlayCondition = true;
+let music4PlayCondition = true;
+
+music1Play.addEventListener("click", () => {
+  if (music1PlayCondition === true) {
+    sound1.play();
+    sound2.pause();
+    sound3.pause();
+    sound4.pause();
+    music2Play.classList.remove("pause");
+    music2Play.classList.add("play");
+    music3Play.classList.remove("pause");
+    music3Play.classList.add("play");
+    music4Play.classList.remove("pause");
+    music4Play.classList.add("play");
+    music1Play.classList.add("pause");
+    music1Play.classList.remove("play");
+    music1PlayCondition = !music1PlayCondition;
+  } else {
+    sound1.pause();
+    music1Play.classList.remove("pause");
+    music1Play.classList.add("play");
+    music1PlayCondition = !music1PlayCondition;
+  }
+});
+
+music2Play.addEventListener("click", () => {
+  if (music2PlayCondition === true) {
+    sound2.play();
+    sound1.pause();
+    sound3.pause();
+    sound4.pause();
+    music1Play.classList.remove("pause");
+    music1Play.classList.add("play");
+    music3Play.classList.remove("pause");
+    music3Play.classList.add("play");
+    music4Play.classList.remove("pause");
+    music4Play.classList.add("play");
+    music2Play.classList.add("pause");
+    music2Play.classList.remove("play");
+    music2PlayCondition = !music2PlayCondition;
+  } else {
+    sound2.pause();
+    music2Play.classList.remove("pause");
+    music2Play.classList.add("play");
+    music2PlayCondition = !music2PlayCondition;
+  }
+});
+
+music3Play.addEventListener("click", () => {
+  if (music3PlayCondition === true) {
+    sound3.play();
+    sound1.pause();
+    sound2.pause();
+    sound4.pause();
+    music1Play.classList.remove("pause");
+    music1Play.classList.add("play");
+    music2Play.classList.remove("pause");
+    music2Play.classList.add("play");
+    music4Play.classList.remove("pause");
+    music4Play.classList.add("play");
+
+    music3Play.classList.add("pause");
+    music3Play.classList.remove("play");
+    music3PlayCondition = !music3PlayCondition;
+  } else {
+    sound3.pause();
+    music3Play.classList.remove("pause");
+    music3Play.classList.add("play");
+    music3PlayCondition = !music3PlayCondition;
+  }
+});
+
+music4Play.addEventListener("click", () => {
+  if (music4PlayCondition === true) {
+    sound4.play();
+    sound1.pause();
+    sound3.pause();
+    sound2.pause();
+    music1Play.classList.remove("pause");
+    music1Play.classList.add("play");
+    music3Play.classList.remove("pause");
+    music3Play.classList.add("play");
+    music2Play.classList.remove("pause");
+    music2Play.classList.add("play");
+
+    music4Play.classList.add("pause");
+    music4Play.classList.remove("play");
+    music4PlayCondition = !music4PlayCondition;
+  } else {
+    sound4.pause();
+    music4Play.classList.remove("pause");
+    music4Play.classList.add("play");
+    music4PlayCondition = !music4PlayCondition;
+  }
 });
