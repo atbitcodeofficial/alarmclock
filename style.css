@@ -262,10 +262,10 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-
+ 
 #settingsPage #cutBtn {
   position: absolute;
-  top: 70px;
+  top: 20px;
   right: 20px;
   cursor: pointer;
 }
@@ -348,11 +348,7 @@ body {
 }
 
 .movePage {
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
+  top: 0 !important;
 }
 
 @media screen and (max-width: 560px) {
